@@ -15,7 +15,7 @@ public class DAO_UsuarioImpl implements DAO_Usuario {
             System.out.println("El usuario ya existe");
             loguin = true;
         }
-        return false;
+        return loguin;
     }
     /////metodo INSERT
     public boolean registroUsuario(Usuario u){

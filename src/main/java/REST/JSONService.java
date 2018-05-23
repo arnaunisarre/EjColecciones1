@@ -25,7 +25,23 @@ public class JSONService {
         }
     }
 
+
+    @Path("/basic")
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getIt() {
+        return "Got it!";
+    }
+
+
+    @POST
+    @Path("/new")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response newUsuario(Login login) {
+
+        return Response.status(201).entity("User  added ").build();
+    }
+   /* @GET
     @Path("/Usuario/{nombre}")
     @Produces(MediaType.APPLICATION_JSON)
     public Usuario getUsuario(@PathParam("nombre") String nombre) {
@@ -58,6 +74,16 @@ public class JSONService {
         // Atencion: siempre añade en la misma posicion por el scope de tracks
         return Response.status(201).entity("User added in position "+mundo.listaUsuarios.size()).build();
     }
+
+    @POST
+    @Path("/new")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response newUsuario(Login login) {
+
+        return Response.status(201).entity("User  added ").build();
+    }
+
+
     @POST
     @Path("/Objeto")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -76,6 +102,6 @@ public class JSONService {
     }
 
 
-
+*/
 
 }
